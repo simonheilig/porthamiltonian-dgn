@@ -1,0 +1,96 @@
+accelerator: auto
+benchmark: false
+dataset:
+  cache_load: false
+  cache_save: false
+  dir: ./datasets
+  edge_dim: 128
+  edge_encoder: false
+  edge_encoder_bn: true
+  edge_encoder_name: Bond
+  edge_encoder_num_types: 0
+  edge_message_ratio: 0.8
+  edge_negative_sampling_ratio: 1.0
+  edge_train_mode: all
+  encoder: true
+  encoder_bn: true
+  encoder_dim: 128
+  encoder_name: db
+  format: OGB
+  label_column: none
+  label_table: none
+  location: local
+  name: peptides-functional
+  node_encoder: true
+  node_encoder_bn: false
+  node_encoder_name: Atom
+  node_encoder_num_types: 0
+  remove_feature: false
+  resample_disjoint: false
+  resample_negative: false
+  shuffle_split: true
+  slic_compactness: 10
+  split:
+  - 0.8
+  - 0.1
+  - 0.1
+  split_dir: ./splits
+  split_index: 0
+  split_mode: standard
+  task: graph
+  task_type: classification_multilabel
+device: cuda
+gnn:
+  batchnorm: false
+  head: mlp_graph
+  act: gelu 
+  dropout: 0.1
+  agg: add
+  iterations: 32
+  layers_mp: 1
+  layers_post_mp: 3
+  layers_pre_mp: 0
+  normalize_adj: false
+  layer_type: porthamiltonianconv
+  conv_p: 'naive'
+  conv_q: 'gcn'
+  dim_inner: 195
+  doubled_dim: true
+  t_end: 5.0
+  weight_sharing: true
+  port_alpha: 1.0
+  port_beta: 1.0
+  port_dampening: 'param'
+  port_external: 'DGNtanh'
+  final_state: 'p'
+metric_agg: argmax
+metric_best: ap
+model:
+  edge_decoding: dot
+  graph_pooling: mean
+  loss_fun: cross_entropy
+  match_upper: true
+  size_average: mean
+  thresh: 0.5
+  type: custom_gnn
+optim:
+  optimizer: adamW
+  weight_decay: 0.0
+  base_lr: 0.001
+  max_epoch: 250
+  scheduler: cosine_with_warmup
+  num_warmup_epochs: 5
+train:
+  auto_resume: false
+  batch_size: 128
+  ckpt_clean: true
+  ckpt_period: 100
+  enable_ckpt: true
+  epoch_resume: -1
+  eval_period: 1
+  finetune: ''
+  freeze_pretrained: false
+  iter_per_epoch: 32
+  mode: custom
+wandb:
+  use: false

@@ -1,0 +1,17 @@
+# Format for each row: name in config.py; alias; range to search
+# No spaces, except between these 3 fields
+# Line breaks are used to union different grid search spaces
+# Feel free to add '#' to add comments
+
+gnn.t_end T [3.0,5.0,6.0]
+gnn.iterations L [32,64]
+gnn.conv_p aggp ['naive','gcn']
+gnn.conv_q aggq ['naive','gcn']
+gnn.dim_inner d [195,300]
+gnn.final_state pq ['pq','q','p']
+gnn.port_alpha alph [1.0]
+gnn.port_beta bet [-1.0,1.0]
+gnn.port_dampening damp ['param']
+gnn.port_external ext ['DGNtanh']
+gnn.layers_post_mp headl [1,3]
+
