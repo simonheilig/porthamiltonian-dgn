@@ -6,19 +6,19 @@ Please consider citing us
 
  	@inproceedings{
         heilig2025porthamiltonian,
-        title={Port-Hamiltonian Architectural Bias for Long-Range Propagation in Deep Graph Networks},
+        title={{Port-Hamiltonian Architectural Bias for Long-Range Propagation in Deep Graph Networks}},
         author={Simon Heilig and Alessio Gravina and Alessandro Trenta and Claudio Gallicchio and Davide Bacciu},
         booktitle={The Thirteenth International Conference on Learning Representations},
-        year={2025}
+        year={2025},
+        url={https://openreview.net/forum?id=03EkqSCKuO}
     }
-
 
 ## Requirements
 _Note: we assume Miniconda/Anaconda is installed, otherwise see this [link](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html) for correct installation. The proper Python version is installed during the first step of the following procedure._
 
 1. Install the required packages and create the environment
-    - ``` conda env create -f env.yml ```
-    - python=3.8.18, pyg=2.4.0, pytorch=2.1.0, CUDA 12.1
+    - ``` conda env create -f env.yml ```   (this includes python=3.8.18, pyg=2.4.0, pytorch=2.1.0, and CUDA 12.1)
+    
 
 2. Activate the environment
     - ``` conda activate phdgn ```
